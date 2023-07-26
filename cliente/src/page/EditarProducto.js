@@ -18,7 +18,7 @@ function EditarProducto(){
     const[file, setFile] = useState('')
 
     useEffect(()=>{
-        axios.post('hhttps://gestordeproductos.onrender.com/api/producto/editarproducto',{codigo: params.codigo}).then(res =>{
+        axios.post('https://gestordeproductos.onrender.com/api/producto/editarproducto',{codigo: params.codigo}).then(res =>{
             console.log(res.data[0])
             const dataproducto = res.data[0]
             setCodigo(dataproducto.codigo)
