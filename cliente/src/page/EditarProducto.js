@@ -89,7 +89,7 @@ function EditarProducto(){
                             <label className="form-label">Imagen</label>
                             <input type="file" className="form-control" onChange={(e) => {setFile(e.target.files[0])}}/>
                         </div>
-                        <img src={ imagen ? "https://gestordeproductos.onrender.com"+ imagen : "https://gestordeproductos.onrender.com/imagen_por_defecto.png" } alt='img'></img>
+                        <img src={ imagen ? "https://gestordeproductos.onrender.com/"+ imagen : "https://gestordeproductos.onrender.com/imagen_por_defecto.png" } alt='img'></img>
                     </div>
                     <button onClick={editarProducto} type="button" className="btn btn-primary">Editar</button>
                 </form>     

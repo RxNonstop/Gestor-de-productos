@@ -25,7 +25,7 @@ function ProductoIndividual({producto}){
             <div className='cont-img'>
                 <button className='btn-eliminar' onClick={() =>{borrarProducto(producto.codigo)}}>X</button>
                 <p>{producto.codigo}</p>
-                <img src={ producto.file ? "https://gestordeproductos.onrender.com"+producto.file : "https://gestordeproductos.onrender.com/imagen_por_defecto.png" } alt='ima'></img>
+                <img src={ producto.file ? "https://gestordeproductos.onrender.com/"+producto.file : "https://gestordeproductos.onrender.com/imagen_por_defecto.png" } alt='ima'></img>
             </div>
 
             <div className='info'>
