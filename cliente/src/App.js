@@ -5,19 +5,19 @@ import AgregarProducto from './page/AgregarProducto';
 import EditarProducto from './page/EditarProducto';
 import Landing from './page/landing';
 
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {Routes, Route, Router} from 'react-router-dom'
 
 function App() {
   return (
 
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route path='/' element={<Landing></Landing>} exact></Route>
           <Route path='/listaproductos' element={<ListaProductos></ListaProductos>} exact></Route>
           <Route path='/agregarproducto' element={<AgregarProducto></AgregarProducto>} exact></Route>
           <Route path='/editarproducto/:codigo' element={<EditarProducto></EditarProducto>} exact></Route>
         </Routes>
-      </BrowserRouter>
+      </Router>
   );
 }
 
