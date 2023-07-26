@@ -1,5 +1,9 @@
 *{
   box-sizing: border-box;
+  margin: 0;
+  transition: all .2s;
+  text-decoration: none !important;
+  list-style: none !important;
 }
 body {
   margin: 0;
@@ -8,6 +12,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('../public/images/wp2248881.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
 }
 
 code {
@@ -106,8 +115,8 @@ code {
 }
 
 .cont-portada img{
-  width: 100%;
-  max-height: 400px;
+  width: 300px;
+  max-height: 300px;
   object-fit: cover;
   margin-top: 30px;
 }
@@ -116,11 +125,118 @@ code {
   color: rgb(255, 183, 0) !important;
 }
 
-.btn{
-  margin-bottom: 10px;
-}
 
 .cont-input-img{
   display:flex;
   justify-content: space-between;
+}
+
+.cont-portada{
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vw;
+  background-image: url('../public/images/wp2248881.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.borde{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.184);
+  box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.053); 
+  border-radius: 30px;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.816);
+}
+
+.cont-portada .cont-info{
+  width: 400px;
+  margin: 40px;
+  text-align: center;
+}
+
+.cont-portada .cont-info h2{
+  margin-bottom: 30px;
+  font-size: 2.4rem;
+}
+
+.cont-portada .cont-lista{
+  width: 400px;
+  margin: 40px;
+}
+
+.cont-lista{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cont-lista a{
+  text-decoration: none;
+  list-style: none;
+}
+
+.cont-lista li{
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 0px 5px black;
+  margin-top: 20px;
+  background-color: white;
+  color: black;
+}
+
+.cont-lista li:hover{
+  background-color: rgb(255, 183, 0);
+  color: white
+}
+
+.cont-fondo{
+  background-color: rgba(255, 255, 255, 0.904);
+  margin-top: 20px;
+  border-radius: 20px;
+  padding: 20px 30px;
+  padding-bottom: 40px;
+}
+
+.nav-item a{
+  text-decoration: none;
+}
+
+.cont-edit{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-editar{
+  height: 30px;
+  border-radius: 15px;
+  width: 150px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  color: black;
+  font-weight: bold;
+}
+
+.btn-editar:hover{
+  background-color: rgb(255, 183, 0);
+  color: white
 }

@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import Swal from 'sweetalert2'
 import clienteAxios from '../Components/axios/ClienteAxios'
 
+import Header from '../Components/Header'
+
 function AgregarProducto(){
 
     const[codigo, setCodigo] = useState('')
@@ -28,7 +30,7 @@ function AgregarProducto(){
             confirmButtonText: 'Ok'
         })
         .then(res =>{
-            clienteAxios.post('http://localhost:5000/api/producto/agregarproducto',producto)
+            clienteAxios.post('https://gestordeproductos.onrender.com/api/producto/agregarproducto',producto)
             .then(res =>{
                 window.location = '/listaProductos'
             })
@@ -41,38 +43,41 @@ function AgregarProducto(){
 
 
     return(
-        <div className="container mt-5">
-            <h3>Agregar nuevo producto</h3>
+        <>
+            <Header></Header>
+            <div className="container pt-5 cont-fondo">
+                <h3>Agregar nuevo producto</h3>
 
-            <form className='container mt-5'>
-            <div className="mb-3">
-                    <label className="form-label">Codigo</label>
-                    <input type="number" className="form-control" value={codigo} onChange={(e) => {setCodigo(e.target.value)}}/>
-                </div>
+                <form className='container mt-5'>
                 <div className="mb-3">
-                    <label className="form-label">Nombre</label>
-                    <input type="text" className="form-control" value={nombre} onChange={(e) => {setNombre(e.target.value)}}/>
-                </div>
-                <div className="mb-3">
-                    <label className="form-label">Categoria</label>
-                    <input type="text" className="form-control" value={categoria} onChange={(e) => {setCategoria(e.target.value)}}/>
-                </div>
-                <div className="mb-3">
-                    <label className="form-label">Precio</label>
-                    <input type="number" className="form-control" value={precio} onChange={(e) => {setPrecio(e.target.value)}}/>
-                </div>
-                <div className="mb-3">
-                    <label className="form-label">Descripcion</label>
-                    <textarea className="form-control" value={descripcion} onChange={(e) => {setDescripcion(e.target.value)}}/>
-                </div>
-                <div className="mb-3">
-                    <label className="form-label">Imagen</label>
-                    <input type="file" className="form-control" onChange={(e) => {setFile(e.target.files[0])}}/>
-                </div>
-                <button onClick={AddProducto} type="button" className="btn btn-primary">Agregar</button>
-            </form>     
+                        <label className="form-label">Codigo</label>
+                        <input type="number" className="form-control" value={codigo} onChange={(e) => {setCodigo(e.target.value)}}/>
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">Nombre</label>
+                        <input type="text" className="form-control" value={nombre} onChange={(e) => {setNombre(e.target.value)}}/>
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">Categoria</label>
+                        <input type="text" className="form-control" value={categoria} onChange={(e) => {setCategoria(e.target.value)}}/>
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">Precio</label>
+                        <input type="number" className="form-control" value={precio} onChange={(e) => {setPrecio(e.target.value)}}/>
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">Descripcion</label>
+                        <textarea className="form-control" value={descripcion} onChange={(e) => {setDescripcion(e.target.value)}}/>
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">Imagen</label>
+                        <input type="file" className="form-control" onChange={(e) => {setFile(e.target.files[0])}}/>
+                    </div>
+                    <button onClick={AddProducto} type="button" className="btn btn-primary">Agregar</button>
+                </form>     
 
-        </div>
+            </div>
+        </>
     )
 }
 

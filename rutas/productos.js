@@ -4,6 +4,9 @@ const router = express.Router()
 const multer = require('multer')
 const sharp = require('sharp')
 
+const path = require('path')
+const fs = require('fs')
+
 const mongoose = require('mongoose')
 const eschema = mongoose.Schema
 
@@ -21,26 +24,23 @@ const ModeloProducto = mongoose.model('productos', eschemaproducto)
 module.exports = router
 
 const storage = multer.diskStorage({
-    destination: (req,file,cb) =>{
-        if(file){
-            cb(null,'./cliente/public/uploads')
-        }
-    },
-    filename: (req,file,cb) =>{
+
+    destination: path.join(__dirname, '../uploads/'),
+    filename: (req, file, cb) => {
         if(file){
             const ext = file.originalname.split('.').pop()
-            cb(null,`${Date.now()}.${ext}`)
+            cb(null, `${Date.now()}.${ext}`)
         }
     }
 })
 
 const upload = multer({storage})
 
-const helperImg = (filePath,filename,size = 900) =>{
-    return sharp(filePath)
-        .resize(size)
-        .toFile(`./cliente/public/uploadss/${filename}`)
-}
+// const helperImg = (filePath,filename,size = 900) =>{
+//     return sharp(filePath)
+//         .resize(size)
+//         .toFile(`./cliente/public/uploadss/${filename}`)
+// }
 
 router.get('/obtenerproductos', async (req,res) =>{
 

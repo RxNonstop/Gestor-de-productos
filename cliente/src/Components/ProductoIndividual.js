@@ -7,7 +7,7 @@ function ProductoIndividual({producto}){
 
     function borrarProducto(codigo){
 
-        axios.post('api/producto/borrarproducto',{codigo})
+        axios.post('https://gestordeproductos.onrender.com/api/producto/borrarproducto',{codigo})
         
         Swal.fire({
             tittle:'Producto',
@@ -25,7 +25,7 @@ function ProductoIndividual({producto}){
             <div className='cont-img'>
                 <button className='btn-eliminar' onClick={() =>{borrarProducto(producto.codigo)}}>X</button>
                 <p>{producto.codigo}</p>
-                <img src= {producto.file ? 'uploads/'+producto.file : 'uploads/No_image_available.png'} alt='imagen'></img>
+                <img src={ producto.file ? "https://gestordeproductos.onrender.com"+producto.file : "https://gestordeproductos.onrender.com/imagen_por_defecto.png" } alt='ima'></img>
             </div>
 
             <div className='info'>
@@ -34,8 +34,8 @@ function ProductoIndividual({producto}){
                 <p className='precio'>${producto.precio}</p>
                 <p className='descripcion'>{producto.descripcion}</p>
             </div>
-            <div className='funciones'>
-                <Link to={`/editarproducto/${producto.codigo}`}><li className='btn btn-success'>Editar</li></Link>
+            <div className='cont-edit'>
+                <Link to={`/editarproducto/${producto.codigo}`}><li className='btn-editar'>Editar</li></Link>
             </div>
         </div>
     )

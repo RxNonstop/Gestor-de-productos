@@ -3,12 +3,14 @@ import React, { useEffect, useState } from 'react'
 import ProductoIndividual from '../Components/ProductoIndividual'
 import axios from 'axios'
 
+import Header from '../Components/Header'
+
 function ListaProductos(){
 
     const[dataProductos, setDataProductos] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/producto/obtenerproductos')
+        axios.get('https://gestordeproductos.onrender.com/api/producto/obtenerproductos')
         .then(res =>{
             console.log(res.data)
             setDataProductos(res.data)
@@ -23,13 +25,16 @@ function ListaProductos(){
     })
 
     return(
-        <div className='container'>
-            <h3 className='mt-4 mb-2'>Lista de productos</h3>
+        <>
+            <Header></Header>
+            <div className='container cont-fondo'>
+                <h3 className='pt-4 pb-2'>Lista de productos</h3>
 
-            <div className='cards'>
-                {listaProductos}
+                <div className='cards'>
+                    {listaProductos}
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

@@ -1,14 +1,18 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
+const path = require('path')
+
 
 const archivoBD = require('./conexion')
 
 app.use(cors({
-    origin: "http://localhost:3000"
+    origin: "https://gestorproductos.onrender.com"
 }))
 
 app.use(express.json())
+app.use(express.static(path.join(__dirname, 'uploads')))
+
 
 const rutaproducto = require('./rutas/productos')
 app.use('/api/producto', rutaproducto)
